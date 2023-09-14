@@ -20,9 +20,14 @@ Welcome aboard! Whether you're here for a serious study session, or just to brus
 
 3. What's Cookin' (Upcoming Features):
 
-   - Category Choices: Already out and about, helping you hop from one topic to another.. (Done)
+   - Category Choices: Already out and about, helping you hop from one topic to another.. 🎉
    - Quiz mode: Challenge? Accepted. See how many you can get right
    - Score Shelf: No gold stars here, just pure, humble scores for your eyes only.
+   - And so much more... 
+
+So, grab a comfy spot, and let's dive into the world of fun-fueled learning! 📖🤓
+
+P.S. Bring snacks!🍿😉
 
 ## Getting Started
 
