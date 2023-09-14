@@ -14,8 +14,14 @@ const QuizMode = ({ cards }) => {
 
     return (
         <div>
-            <Flashcard {...cards[currentIndex]} />
-            <button onClick={nextCard}>Next</button>
+            {cards.length ? (
+                <>
+                    <Flashcard {...cards[currentIndex]} />
+                    <button onClick={nextCard}>Next</button>
+                </>
+            ) : (
+                <p>No cards available for the selected category.</p>
+            )}
         </div>
     );
 };

@@ -1,0 +1,49 @@
+/* CategoryList.css */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.category-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #282c34;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.category-list li {
+    padding: 10px;
+    margin: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    color: #f7f7f7;
+    animation: pulse 3s infinite; /* Pulsing effect */
+}
+
+.category-list li:hover {
+    background-color: #3d4048;
+    transform: rotate(-2deg);
+    color: #e2e2e2;
+}
+
+.category-list li:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
