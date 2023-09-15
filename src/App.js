@@ -18,9 +18,9 @@ function App() {
         : [];
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Flashcard App</h1>
+        <div className="font-sans text-center bg-gray-600 h-screen flex flex-col items-center justify-center">
+            <header className="w-3/5 min-h-[50vh] bg-gray-800 p-10 text-white rounded-lg shadow-md">
+                <h1 className="text-7xl mb-5 mt-[-10px]">Flashcard App</h1>
                 {selectedCategory ? (
                     <QuizMode cards={filteredCards} />
                 ) : (

@@ -1,4 +1,9 @@
 /* src/App.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/*  Converting to tailwind
 
 .App {
     font-family: 'Arial', sans-serif;
@@ -41,4 +46,4 @@ button {
 
 button:hover {
     background-color: #0056b3;
-}
+} */

@@ -12,7 +12,8 @@
     }
 }
 
-.category-list {
+/*Converting to tailwind*/
+/* .category-list {
     list-style-type: none;
     padding: 0;
     max-width: 300px;
@@ -29,10 +30,10 @@
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     color: #f7f7f7;
-    animation: pulse 3s infinite; /* Pulsing effect */
-}
+    animation: pulse 3s infinite; 
+}*/
 
-.category-list li:hover {
+/* .category-list li:hover {
     background-color: #3d4048;
     transform: rotate(-2deg);
     color: #e2e2e2;
@@ -46,4 +47,4 @@ h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     margin-top: 10px;
-}
+}  */
