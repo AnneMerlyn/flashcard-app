@@ -3,12 +3,14 @@
 import React, { useState } from 'react';
 import Flashcard from '../FlashCard/Flashcard';
 
-const QuizMode = ({ cards }) => {
+const QuizMode = ({ cards, onDone }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextCard = () => {
         if (currentIndex < cards.length - 1) {
             setCurrentIndex(currentIndex + 1);
+        } else {
+            onDone(); // redirect to category selection when cards are done
         }
     };
 
