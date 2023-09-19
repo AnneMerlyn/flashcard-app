@@ -257,4 +257,4 @@ const sampleFlashcards = [
     // ... add more sample data as needed
 ];
 
-export default sampleFlashcards;
+module.exports = sampleFlashcards;

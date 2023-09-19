@@ -1,20 +1,28 @@
 // App.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import sampleFlashcards from './sampleData';
+//import sampleFlashcards from './sampleData';
 import QuizMode from './components/QuizMode/Quizmode';
 import CategoryList from './components/CategorySelector/CategoryList';
+import { fetchFlashcards } from './api/flashcardsAPI';
 
 function App() {
+    const [flashcards, setFlashcards] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
 
+    useEffect(() => {
+        fetchFlashcards()
+            .then((data) => setFlashcards(data))
+            .catch((error) => console.log('Error fetching data:', error));
+    }, []);
+
     const uniqueCategories = Array.from(
-        new Set(sampleFlashcards.map((card) => card.category))
+        new Set(flashcards.map((card) => card.category))
     );
 
     const filteredCards = selectedCategory
-        ? sampleFlashcards.filter((card) => card.category === selectedCategory)
+        ? flashcards.filter((card) => card.category === selectedCategory)
         : [];
 
     const resetCategory = () => {
