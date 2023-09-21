@@ -1,11 +1,4 @@
-const mysql = require('mysql2/promise');
-
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '_Welcome@1',
-    database: 'flashcarddb',
-});
+const pool = require('../config/database.js');
 
 const fetchFlashcardsByCategory = async (categoryId) => {
     const query = `

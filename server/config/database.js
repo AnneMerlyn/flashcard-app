@@ -7,9 +7,4 @@ const pool = mysql.createPool({
     database: 'flashcarddb',
 });
 
-const fetchCategories = async () => {
-    const [rows] = await pool.query('SELECT * FROM categories');
-    return rows;
-};
-
-module.exports = { fetchCategories };
+module.exports = pool;

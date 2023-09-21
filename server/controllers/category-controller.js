@@ -1,8 +1,8 @@
-const model = require('../models/Categories');
+const { category } = require('../models');
 
 const getCategories = async (req, res) => {
     try {
-        const categories = await model.fetchCategories();
+        const categories = await category.fetchCategories();
         res.json(categories);
     } catch (error) {
         console.error('Error fetching flashcards:', error.message);
