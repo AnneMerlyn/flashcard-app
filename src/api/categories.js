@@ -1,8 +1,9 @@
-const BASE_URL = 'http://localhost:4000';
-
 export const fetchCategories = async () => {
+    console.log(process.env.REACT_APP_API_BASE_URL);
     try {
-        const response = await fetch(`${BASE_URL}/categories`);
+        const response = await fetch(
+            `${process.env.REACT_APP_API_BASE_URL}/categories`
+        );
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

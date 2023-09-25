@@ -1,8 +1,8 @@
-const BASE_URL = 'http://localhost:4000';
-
 export const fetchLevels = async () => {
     try {
-        const response = await fetch(`${BASE_URL}/levels`);
+        const response = await fetch(
+            `${process.env.REACT_APP_API_BASE_URL}/levels`
+        );
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

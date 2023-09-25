@@ -1,7 +1,7 @@
-const BASE_URL = 'http://localhost:4000';
-
 export const fetchFlashCards = async (categoryId) => {
-    const response = await fetch(`${BASE_URL}/flashcards/${categoryId}`);
+    const response = await fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/flashcards/${categoryId}`
+    );
 
     if (!response.ok) {
         throw new Error('Network response was not ok');
