@@ -3,7 +3,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { categoriesController, flashCardsController } = require('./controllers');
+const {
+    categoriesController,
+    flashCardsController,
+    levelsController,
+} = require('./controllers');
 
 const app = express();
 const PORT = 4000;
@@ -16,6 +20,7 @@ app.get(
     flashCardsController.getFlashcardsByCategory
 );
 app.get('/categories', categoriesController.getCategories);
+app.get('/levels', levelsController.getAllLevels);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

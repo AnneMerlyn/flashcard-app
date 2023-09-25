@@ -1,14 +1,15 @@
 const BASE_URL = 'http://localhost:4000';
 
-export const fetchCategories = async () => {
+export const fetchLevels = async () => {
     try {
-        const response = await fetch(`${BASE_URL}/categories`);
+        const response = await fetch(`${BASE_URL}/levels`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
+        console.log('wth', data);
         return data;
     } catch (error) {
-        throw new Error(`Error fetching categories: ${error.message}`);
+        throw new Error(`Error fetching levels: ${error.message}`);
     }
 };

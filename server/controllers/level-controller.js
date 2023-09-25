@@ -1,14 +1,13 @@
 const { level } = require('../models');
 
-const getFlashcardsByLevel = async (req, res) => {
+const getAllLevels = async (req, res) => {
     try {
-        const levelId = req.params.levelId;
-        const levels = await level.fetchFlashcardsByLevel(levelId);
+        const levels = await level.fetchAllLevels();
         res.json(levels);
     } catch (error) {
-        console.error('Error fetching flashcards:', error.message);
+        console.error('Error fetching levels:', error.message);
         res.status(500).send('Internal Server Error');
     }
 };
 
-module.exports = { getFlashcardsByLevel };
+module.exports = { getAllLevels };

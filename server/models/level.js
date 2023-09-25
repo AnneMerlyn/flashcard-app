@@ -1,12 +1,9 @@
 const pool = require('../config/database.js');
 
-const fetchFlashcardsByLevel = async (levelId) => {
-    const query = `
-        
-    `;
+const fetchAllLevels = async () => {
+    const [rows] = await pool.query('SELECT * FROM levels');
 
-    const [rows] = await pool.query(query, [levelId]);
     return rows;
 };
 
-module.exports = { fetchFlashcardsByLevel };
+module.exports = { fetchAllLevels };

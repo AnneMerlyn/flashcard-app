@@ -5,7 +5,7 @@ const getCategories = async (req, res) => {
         const categories = await category.fetchCategories();
         res.json(categories);
     } catch (error) {
-        console.error('Error fetching flashcards:', error.message);
+        console.error('Error fetching categories:', error.message);
         res.status(500).send('Internal Server Error');
     }
 };
