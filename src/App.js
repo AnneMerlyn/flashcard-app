@@ -47,6 +47,19 @@ function App() {
         setSelectedCategory(null);
     };
 
+    const resetLevel = () => {
+        setSelectedLevel(null);
+    };
+
+    const renderBackButton = (callback) => (
+        <button
+            onClick={callback}
+            className="mt-6 px-8 py-3.5 text-lg bg-red-500 text-white rounded-md cursor-pointer transition-colors duration-300 hover:bg-red-700"
+        >
+            Back
+        </button>
+    );
+
     return (
         <div className="font-sans text-center bg-gray-600 h-screen flex flex-col items-center justify-center">
             <header className="w-3/5 min-h-[50vh] bg-gray-800 p-10 text-white rounded-lg shadow-md">
@@ -57,12 +70,17 @@ function App() {
                         onSelectLevel={setSelectedLevel}
                     />
                 ) : selectedCategory ? (
-                    <QuizMode cards={flashCards} onDone={resetCategory} />
+                    <>
+                        <QuizMode cards={flashCards} onDone={resetCategory} />
+                    </>
                 ) : (
-                    <CategoryList
-                        categories={categories}
-                        onSelect={setSelectedCategory}
-                    />
+                    <>
+                        <CategoryList
+                            categories={categories}
+                            onSelect={setSelectedCategory}
+                        />
+                        {renderBackButton(resetLevel)}
+                    </>
                 )}
             </header>
         </div>

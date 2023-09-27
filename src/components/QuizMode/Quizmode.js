@@ -9,8 +9,6 @@ const QuizMode = ({ cards, onDone }) => {
     const nextCard = () => {
         if (currentIndex < cards.length - 1) {
             setCurrentIndex(currentIndex + 1);
-        } else {
-            onDone(); // redirect to category selection when cards are done
         }
     };
 
@@ -19,12 +17,23 @@ const QuizMode = ({ cards, onDone }) => {
             {cards.length ? (
                 <>
                     <Flashcard {...cards[currentIndex]} />
-                    <button
-                        className="mt-2.5 px-8 py-3.5 text-lg bg-blue-500 text-white rounded-md cursor-pointer transition-colors duration-300 hover:bg-blue-700"
-                        onClick={nextCard}
-                    >
-                        Next
-                    </button>
+                    <div className="flex mt-2.5 justify-end">
+                        <button
+                            className="mr-2 px-8 py-3.5 text-lg bg-blue-500 text-white rounded-md cursor-pointer transition-colors duration-300 hover:bg-blue-700"
+                            onClick={nextCard}
+                        >
+                            Next
+                        </button>
+
+                        <button
+                            onClick={() => {
+                                onDone();
+                            }}
+                            className="px-8 py-3.5 text-lg bg-red-500 text-white rounded-md cursor-pointer transition-colors duration-300 hover:bg-red-700"
+                        >
+                            Back
+                        </button>
+                    </div>
                 </>
             ) : (
                 <p>No cards available for the selected category.</p>
