@@ -7,7 +7,6 @@ export const fetchLevels = async () => {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log('wth', data);
         return data;
     } catch (error) {
         throw new Error(`Error fetching levels: ${error.message}`);
