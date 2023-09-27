@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import './App.css';
-//import sampleFlashcards from './sampleData';
 import QuizMode from './components/QuizMode/Quizmode';
 import CategoryList from './components/CategorySelector/CategoryList';
-import { fetchCategoriesByLevel } from './api/categories';
-import { fetchFlashCardsByLevel } from './api/flashCards';
-import { fetchLevels } from './api/levels';
+import {
+    fetchFlashCardsByLevel,
+    fetchCategoriesByLevel,
+    fetchLevels,
+} from './api';
 import LevelSelector from './components/LevelSelector/LevelSelector';
 
 function App() {
