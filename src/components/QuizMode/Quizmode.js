@@ -2,18 +2,27 @@
 
 import React, { useState } from 'react';
 import Flashcard from '../FlashCard/Flashcard';
+import CompletionModal from '../modals/CompletionModal';
 
 const QuizMode = ({ cards, onDone }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [showModal, setShowModal] = useState(false);
+
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    };
 
     const nextCard = () => {
         if (currentIndex < cards.length - 1) {
             setCurrentIndex(currentIndex + 1);
+        } else {
+            toggleModal();
         }
     };
 
     return (
         <div>
+            {showModal && <CompletionModal onClose={toggleModal} />}
             {cards.length ? (
                 <>
                     <Flashcard {...cards[currentIndex]} />
