@@ -3,10 +3,15 @@
 import React from 'react';
 import './CategoryList.css';
 
-const CategoryList = ({ categories, onSelect }) => {
+const CategoryList = ({ categories, onSelect, selectedLevelDescription }) => {
     return (
         <div>
             <h2 className="text-2xl mb-5 mt-2">Select a Category</h2>
+            {selectedLevelDescription && (
+                <p className="text-xl mb-4">
+                    {selectedLevelDescription} Level Deutsch
+                </p>
+            )}
             {categories.length === 0 ? (
                 <div className="text-white bg-gray-400 p-4 mt-2 rounded-lg shadow-md">
                     No Categories available

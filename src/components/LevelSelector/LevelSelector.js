@@ -13,7 +13,12 @@ const LevelSelector = ({ levels, onSelectLevel }) => {
                     <li
                         key={level.level_id}
                         className="py-2.5 px-2.5 my-2 border-b border-gray-300 cursor-pointer transition-transform duration-300 ease-in-out text-white animate-pulse"
-                        onClick={() => onSelectLevel(level.level_id)}
+                        onClick={() =>
+                            onSelectLevel(
+                                level.level_id,
+                                level.level_description
+                            )
+                        }
                         onMouseEnter={(e) =>
                             (e.target.style.backgroundColor = '#3d4048')
                         }

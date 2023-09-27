@@ -16,6 +16,8 @@ function App() {
     const [selectedLevel, setSelectedLevel] = useState(null);
     const [flashCards, setFlashCards] = useState([]);
     const [levels, setLevels] = useState([]);
+    const [selectedLevelDescription, setSelectedLevelDescription] =
+        useState(null);
 
     useEffect(() => {
         fetchLevels()
@@ -67,7 +69,10 @@ function App() {
                 {!selectedLevel ? (
                     <LevelSelector
                         levels={levels}
-                        onSelectLevel={setSelectedLevel}
+                        onSelectLevel={(levelId, levelDescription) => {
+                            setSelectedLevel(levelId);
+                            setSelectedLevelDescription(levelDescription);
+                        }}
                     />
                 ) : selectedCategory ? (
                     <>
@@ -78,6 +83,7 @@ function App() {
                         <CategoryList
                             categories={categories}
                             onSelect={setSelectedCategory}
+                            selectedLevelDescription={selectedLevelDescription}
                         />
                         {renderBackButton(resetLevel)}
                     </>
