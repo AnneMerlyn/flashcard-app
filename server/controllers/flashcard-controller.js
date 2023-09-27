@@ -13,4 +13,15 @@ const getFlashcardsByCategory = async (req, res) => {
     }
 };
 
-module.exports = { getFlashcardsByCategory };
+const getFlashcardsByLevel = async (req, res) => {
+    try {
+        const levelId = req.params.levelId;
+        const flashcards = await flashcard.fetchFlashcardsByLevels(levelId);
+        res.json(flashcards);
+    } catch (error) {
+        console.error('Error fetching flashcards:', error.message);
+        res.status(500).send('Internal Server Error');
+    }
+};
+
+module.exports = { getFlashcardsByCategory, getFlashcardsByLevel };

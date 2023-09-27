@@ -16,10 +16,18 @@ app.use(cors()); // This will handle CORS issues when your React app tries to fe
 app.use(bodyParser.json());
 
 app.get(
-    '/flashcards/:categoryId',
+    '/flashcards/category/:categoryId',
     flashCardsController.getFlashcardsByCategory
 );
-app.get('/categories', categoriesController.getCategories);
+app.get(
+    '/flashcards/level/:levelId',
+    flashCardsController.getFlashcardsByLevel
+);
+app.get('/categories', categoriesController.getAllCategories);
+app.get(
+    '/categories/level/:levelId',
+    categoriesController.getCategoriesByLevel
+);
 app.get('/levels', levelsController.getAllLevels);
 
 app.listen(PORT, () => {
