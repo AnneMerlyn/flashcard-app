@@ -22,7 +22,15 @@ const QuizMode = ({ cards, onDone }) => {
 
     return (
         <div>
-            {showModal && <CompletionModal onClose={toggleModal} />}
+            {showModal && (
+                <CompletionModal
+                    onClose={() => {
+                        toggleModal();
+                        onDone();
+                    }}
+                />
+            )}
+
             {cards.length ? (
                 <>
                     <Flashcard {...cards[currentIndex]} />
